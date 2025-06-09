@@ -708,6 +708,113 @@ a {
 }
 
 /* End Testimonials */
+/* Start Team Members */
+.members {
+    padding: var(--main-section-padding-top) 0px var(--main-section-padding-bottom);
+    position: relative;
+}
+
+.members .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.members .content {
+    position: relative;
+}
+
+.members .content::before,
+.members .content::after {
+    content: "";
+    position: absolute;
+    background-color: #f3f3f3;
+    height: 100%;
+    border-radius: 10px;
+    right: 0;
+    top: 0;
+    transition: var(--main-transition);
+}
+
+.members .content::before {
+    width: calc(100% - 60px);
+    z-index: -2;
+}
+
+.members .content::after {
+    background-color: #e4e4e4;
+    z-index: -1;
+    width: 0;
+}
+
+.members .content:hover::after {
+    width: calc(100% - 60px);
+}
+
+.members .content .data {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 60px;
+}
+
+.members .data img {
+    width: 300px;
+    max-width: calc(100%- 60px);
+    border-radius: 10px;
+    transition: var(--main-transition);
+}
+
+.members .content:hover .data img {
+    filter: grayscale(100%);
+}
+
+.members .data .icons {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 60px;
+    gap: 15px;
+}
+
+.members .data .icons a {
+    width: 60px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--main-transition);
+    cursor: pointer;
+}
+
+.members .data .icons a:hover i {
+    color: var(--main-color-alt);
+}
+
+.members .data .icons i {
+    color: #777;
+}
+
+.members .text {
+    margin-left: 60px;
+    padding: 20px;
+}
+
+.members .text h3 {
+    font-size: var(--size-h-small);
+    color: var(--main-color);
+    transition: var(--main-transition);
+}
+
+.members .content:hover .text h3 {
+    color: black;
+}
+
+.members .text p {
+    margin: 10px 0px 15px;
+}
+
+/* End Team Members */
 /* Start Animation */
 @keyframes up-and-down {
 
