@@ -18,7 +18,7 @@
     position: relative;
     width: fit-content;
     text-transform: uppercase;
-    margin: 0 auto 40px;
+    margin: 0 auto 80px;
     padding: 10px 20px;
     font-size: 30px;
     border: 3px solid black;
@@ -539,7 +539,7 @@ a {
     content: "";
     position: absolute;
     left: 0;
-    top: 0;
+    top: -3px;
     width: 100%;
     height: 100%;
 }
@@ -652,6 +652,62 @@ a {
 }
 
 /* End Features */
+/* Start Testimonials */
+.testimonials {
+    padding: var(--main-section-padding-top) 0px var(--main-section-padding-bottom);
+    position: relative;
+    background-color: var(--secondary-background-color);
+}
+
+.testimonials .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.testimonials .content {
+    position: relative;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.testimonials .content img {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    transform: translate(10%, -50%);
+    border-radius: 50%;
+    width: 100px;
+    border: 10px solid var(--secondary-background-color);
+}
+
+.testimonials .content h3 {
+    color: var(--main-color);
+    font-size: var(--size-small);
+    margin-bottom: 15px;
+}
+
+.testimonials .content span {
+    display: block;
+    font-size: var(--size-small);
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.testimonials .content .rate .filled {
+    color: #ffc107;
+    margin-bottom: 20px;
+}
+
+.testimonials .content p {
+    color: #777;
+    line-height: 1.5;
+    margin: 10px 0px 0px;
+}
+
+/* End Testimonials */
 /* Start Animation */
 @keyframes up-and-down {
 
