@@ -7,6 +7,8 @@
     --size-h-small: 28px;
     --size-h-big: 35px;
     --main-transition: 0.35s;
+    --main-section-padding-top: 100px;
+    --main-section-padding-bottom: 100px;
 }
 
 /* End Variables */
@@ -387,6 +389,69 @@ a {
 }
 
 /* End Landing */
+/* Start Articles */
+.articles {
+    padding: var(--main-section-padding-top) 0px var(--main-section-padding-bottom);
+    position: relative;
+}
+
+.articles .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.articles .content {
+    background-color: white;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.10) 0px 2px 15px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.10) 0px 2px 15px;
+    box-shadow: rgba(0, 0, 0, 0.10) 0px 2px 15px;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform var(--main-transition), box-shadow var(--main-transition);
+}
+.articles .content:hover {
+    transform: translateY(-10px);
+    -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 15px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 15px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 15px;
+}
+.articles .content img {
+    max-width: 100%;
+}
+
+.articles .content .text {
+    padding: 20px;
+}
+
+.articles .content .text h3 {
+    margin: 0;
+}
+
+.articles .content .text p {
+    font-size: var(--size-small);
+    margin-top: 10px;
+    color: gray;
+}
+
+.articles .content .detail {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--size-small);
+    padding: 20px;
+    border-top: 1px solid rgb(236, 236, 236);
+}
+
+.articles .content .detail a,
+.articles .content .detail i {
+    color: var(--main-color);
+    font-weight: bold;
+}
+.articles .content:hover .detail i {
+    animation: go-right 0.5s infinite;
+}
+/* End Articles */
 /* Start Animation */
 @keyframes up-and-down {
 
@@ -424,7 +489,8 @@ a {
         width: 12px;
         height: 12px;
     }
-    100%{
+
+    100% {
         left: 0;
         border-radius: 0;
         width: 51%;
@@ -438,7 +504,8 @@ a {
         width: 12px;
         height: 12px;
     }
-    100%{
+
+    100% {
         right: 0;
         border-radius: 0;
         width: 51%;
@@ -446,4 +513,12 @@ a {
     }
 }
 
+@keyframes go-right {
+    0%,100%{
+        transform: translateX(0px);
+    }
+    50%{
+        transform: translateX(-10px);
+    }
+}
 /* End Animation */
