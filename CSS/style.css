@@ -9,6 +9,7 @@
     --main-transition: 0.35s;
     --main-section-padding-top: 100px;
     --main-section-padding-bottom: 100px;
+    --secondary-background-color: #ececec;
 }
 
 /* End Variables */
@@ -410,12 +411,14 @@ a {
     overflow: hidden;
     transition: transform var(--main-transition), box-shadow var(--main-transition);
 }
+
 .articles .content:hover {
     transform: translateY(-10px);
     -webkit-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 15px;
     -moz-box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 15px;
     box-shadow: rgba(0, 0, 0, 0.25) 0px 2px 15px;
 }
+
 .articles .content img {
     max-width: 100%;
 }
@@ -448,10 +451,66 @@ a {
     color: var(--main-color);
     font-weight: bold;
 }
+
 .articles .content:hover .detail i {
     animation: go-right 0.5s infinite;
 }
+
 /* End Articles */
+/* Start Gallery */
+.gallery {
+    padding: var(--main-section-padding-top) 0px var(--main-section-padding-bottom);
+    position: relative;
+    background-color: var(--secondary-background-color);
+}
+
+.gallery .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.gallery .box {
+    background-color: white;
+    padding: 15px;
+    -webkit-box-shadow: rgba(0, 0, 0, 0.13) 0px 12px 20px, rgba(0, 0, 0, 0.12) 0px 2px 4px;
+    -moz-box-shadow: rgba(0, 0, 0, 0.13) 0px 12px 20px, rgba(0, 0, 0, 0.12) 0px 2px 4px;
+    box-shadow: rgba(0, 0, 0, 0.13) 0px 12px 20px, rgba(0, 0, 0, 0.12) 0px 2px 4px;
+}
+
+.gallery .image {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery .image::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255, 0.2);
+    transition: var(--main-transition);
+    opacity: 0;
+    z-index: 2;
+}
+
+.gallery .box:hover .image::before {
+    animation: flashing 0.7s;
+}
+
+.gallery .image img {
+    max-width: 100%;
+    transition: var(--main-transition);
+}
+
+.gallery .box .image:hover img {
+    transform: rotate(5deg) scale(1.1);
+}
+
+/* End Gallery */
 /* Start Animation */
 @keyframes up-and-down {
 
@@ -514,11 +573,29 @@ a {
 }
 
 @keyframes go-right {
-    0%,100%{
+
+    0%,
+    100% {
         transform: translateX(0px);
     }
-    50%{
+
+    50% {
         transform: translateX(-10px);
     }
 }
+
+@keyframes flashing {
+
+    0%,
+    40% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        width: 200%;
+        height: 200%;
+    }
+}
+
 /* End Animation */
