@@ -903,7 +903,8 @@ a {
     left: 100px;
     width: 50px;
     top: 0px;
-    height: calc(100% + 0.5px);transform: skewX(-30deg);
+    height: calc(100% + 0.5px);
+    transform: skewX(-30deg);
 }
 
 .services .content .info a {
@@ -912,7 +913,56 @@ a {
 }
 
 /* End Services */
+/* Start Skills */
+.our-skills {
+    padding: var(--main-section-padding-top) 0px var(--main-section-padding-bottom);
+}
 
+.our-skills .container {
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width:991px) {
+    .our-skills img {
+        display: none;
+    }
+}
+
+.our-skills .skills {
+    flex: 1;
+}
+
+.our-skills .skill>h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.our-skills .skill>h3>span {
+    font-size: 12px;
+    border: 1px solid #ccc;
+    padding: 3px 5px;
+    border-radius: 3px;
+    color: var(--main-color);
+}
+
+.our-skills .skill .progress {
+    height: 30px;
+    background-color: #eee;
+    margin: 20px 0px;
+    position: relative;
+}
+
+.our-skills .skill .progress>span {
+    content: "";
+    position: absolute;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: var(--main-color);
+}
+/* End Skills */
 /* Start Animation */
 @keyframes up-and-down {
 
