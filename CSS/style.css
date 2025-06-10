@@ -962,7 +962,89 @@ a {
     top: 0;
     background-color: var(--main-color);
 }
+
 /* End Skills */
+/* Start Works */
+.work-steps {
+    padding: var(--main-section-padding-top) 0px var(--main-section-padding-bottom);
+    position: relative;
+    background-color: var(--secondary-background-color);
+}
+
+.work-steps .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
+}
+
+.work-steps .image {
+    max-width: 100%;
+}
+
+@media (max-width:991px) {
+    .work-steps .container {
+        flex-direction: column;
+    }
+}
+
+.work-steps .info .content {
+    display: flex;
+    align-items: center;
+    border: 2px solid white;
+    background-color: white;
+    padding: 30px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+}
+@media (max-width:991px) {
+    .work-steps .info .content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+.work-steps .info .content::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 0;
+    height: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: var(--secondary-background-color);
+    transition: var(--main-transition);
+    z-index: -1;
+}
+.work-steps .info .content:hover::before{
+    width: calc(100% - 2px);
+    height: calc(100% - 2px);
+}
+.work-steps .info .content img {
+    width: 64px;
+    margin-right: 30px;
+}
+@media (max-width:991px) {
+    .work-steps .info .content img {
+        margin-right: 0px;
+        margin-bottom: 10px;
+    }
+}
+.work-steps .info .content .text h3 {
+    margin: 0;
+    font-size: var(--size-small);
+}
+
+.work-steps .info .content .text p {
+    color: #777;
+    margin-top: 10px;
+    line-height: 1.7;
+    margin-top: 10px;
+}
+
+/* End Works */
 /* Start Animation */
 @keyframes up-and-down {
 
